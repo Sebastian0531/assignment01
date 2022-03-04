@@ -14,10 +14,9 @@ const defaultclothingList = [
   { id: "5", name: "Jacket", price: "$25.00",description: "Puffy jacket", stock: 4},
 ];
 
-const filteredList = defaultclothingList.filter(ClothingItem => ClothingItem.name.startsWith(filter));
+// const filteredList = defaultclothingList.filter(ClothingItem => ClothingItem.name.startsWith(filter));
 
 export const ClothingList = () => {
-  const [filter, setFilter] = useState("");
   console.log('ClothingList rendered');
   const navigate = useNavigate();
   return (
@@ -45,23 +44,19 @@ export const ClothingList = () => {
         </tbody>
       </table>
       <Button onClick={() => navigate("/")} variant="primary" >Login</Button><br></br>
-      <label> Filter: </label>
-      <input
-        type="text"
-        value={filter}
-        onChange={(e) => setFilter(e.target.value)}>
-      </input>
-
       
     </div>
-
+    
   );
 };
 
 
 
 
+
+
 // const addItemToStock = (item) => {
+// 
 //   const existingItem = defaultclothingList.find((clothesItem) => clothesItem.name === item.name)
 //   if (existingItem) {
 //     const newClothes = [...defaultclothingList];
@@ -75,4 +70,4 @@ export const ClothingList = () => {
 // const items = (name, price, descript, stock) => {
 //   const item = [{id: ClothingList.length, name: name, price: price, description: descript, stock: stock}]
 //   addItemToStock(item)
-// }
+// }dasdasdsad

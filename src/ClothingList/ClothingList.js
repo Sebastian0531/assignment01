@@ -14,6 +14,22 @@ const defaultclothingList = [
   { id: "5", name: "Jacket", price: "$25.00",description: "Puffy jacket", stock: 4},
 ];
 
+// const addItemToStock = (item) => {
+//   const existingItem = defaultclothingList.find((clothesItem) => clothesItem.name === item.name)
+//   if (existingItem) {
+//     const newClothes = [...defaultclothingList];
+//     const item = newClothes.find((clothesItem) => clothesItem.name === item.name)
+//     item.stock += item.stock
+//     setDefaultclothingList(newClothes)
+//   }
+//   setDefaultclothingList([...defaultclothingList, item]) 
+// }
+
+// const items = (name, price, descript, stock) => {
+//   const item = [{id: ClothingList.length, name: name, price: price, description: descript, stock: stock}]
+//   addItemToStock(item)
+// }
+
 
 
 export const ClothingList = () => {
@@ -78,22 +94,6 @@ export const ClothingList = () => {
     
   );
 };
-
-// const addItemToStock = (item) => {
-//   const existingItem = defaultclothingList.find((clothesItem) => clothesItem.name === item.name)
-//   if (existingItem) {
-//     const newClothes = [...defaultclothingList];
-//     const item = newClothes.find((clothesItem) => clothesItem.name === item.name)
-//     item.stock += item.stock
-//     setDefaultclothingList(newClothes)
-//   }
-//   setDefaultclothingList([...defaultclothingList, item]) 
-// }
-
-// const items = (name, price, descript, stock) => {
-//   const item = [{id: ClothingList.length, name: name, price: price, description: descript, stock: stock}]
-//   addItemToStock(item)
-// }
 
 
 

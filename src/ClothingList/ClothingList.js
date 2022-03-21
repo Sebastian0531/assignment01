@@ -3,8 +3,7 @@ import "./ClothingList.css";
 import {useNavigate} from "react-router-dom";
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
+import { AddClothingItem } from "./AddClothingItem/AddClothingItem";
 
 const defaultclothingList = [
   { id: "1", name: "BucketHat", price: "$20.00",description: "Round shape hat", stock: 2},
@@ -14,29 +13,15 @@ const defaultclothingList = [
   { id: "5", name: "Jacket", price: "$25.00",description: "Puffy jacket", stock: 4},
 ];
 
-// const addItemToStock = (item) => {
-//   const existingItem = defaultclothingList.find((clothesItem) => clothesItem.name === item.name)
-//   if (existingItem) {
-//     const newClothes = [...defaultclothingList];
-//     const item = newClothes.find((clothesItem) => clothesItem.name === item.name)
-//     item.stock += item.stock
-//     setDefaultclothingList(newClothes)
-//   }
-//   setDefaultclothingList([...defaultclothingList, item]) 
-// }
-
-// const items = (name, price, descript, stock) => {
-//   const item = [{id: ClothingList.length, name: name, price: price, description: descript, stock: stock}]
-//   addItemToStock(item)
-// }
-
-
-
 export const ClothingList = () => {
   const [filter, setFilter] = useState("");
   const filteredList = defaultclothingList.filter(ClothingItem => ClothingItem.name.startsWith(filter));
   console.log('ClothingList rendered');
   const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [description, setDescription] = useState("");
+  const [stock, setStock] = useState("");
   return (
     <div className="clothing-list">
       <table>
@@ -78,6 +63,7 @@ export const ClothingList = () => {
             <th>stock</th>
           </tr>
         </thead>
+        
         <tbody>
           {filteredList.map(({id, name, price, description, stock}, index) => (
             <tr key={index}>
@@ -87,11 +73,11 @@ export const ClothingList = () => {
               <td>{description}</td>
               <td>{stock}</td>
             </tr>
-          ))}
+          ))}  
         </tbody>
       </table>
+      {/* <AddClothes name={name} setName={setName} price={price} setPrice={setPrice} description={description} setDescription={setDescription} stock={stock} setStock={setStock} addClothes={addClothes} /> */}
     </div>
-    
   );
 };
 
